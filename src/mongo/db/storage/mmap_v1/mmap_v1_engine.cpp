@@ -163,6 +163,7 @@ void acquirePathLock(MMAPV1Engine* storageEngine,
 /// warn if readahead > 256KB (gridfs chunk size)
 void checkReadAhead(const string& dir) {
 #ifdef __linux__
+#include <sys/sysmacros.h>
     try {
         const dev_t dev = getPartition(dir);
 
