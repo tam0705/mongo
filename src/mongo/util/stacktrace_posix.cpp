@@ -277,6 +277,10 @@ MONGO_INITIALIZER(ExtractSOMap)(InitializerContext*) {
 #include <elf.h>
 #include <link.h>
 
+#ifdef _ELF_H
+std::cout << "elf.h exists? maybe?" << std::endl;
+#endif
+
 namespace mongo {
 namespace {
 
