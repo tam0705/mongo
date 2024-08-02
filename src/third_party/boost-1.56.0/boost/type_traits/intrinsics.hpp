@@ -147,29 +147,29 @@
 #   if (!defined(__GLIBCXX__) || (__GLIBCXX__ >= 20080306 && __GLIBCXX__ != 20080519)) && __has_feature(is_empty)
 #     define BOOST_IS_EMPTY(T) __is_empty(T)
 #   endif
-#   if __has_feature(has_trivial_constructor)
-#     define BOOST_HAS_TRIVIAL_CONSTRUCTOR(T) __has_trivial_constructor(T)
+#   if __has_feature(is_trivially_constructible)
+#     define BOOST_HAS_TRIVIAL_CONSTRUCTOR(T) __is_trivially_constructible(T)
 #   endif
-#   if __has_feature(has_trivial_copy)
-#     define BOOST_HAS_TRIVIAL_COPY(T) (__has_trivial_copy(T) && !is_reference<T>::value && !is_volatile<T>::value)
+#   if __has_feature(is_trivially_copyable)
+#     define BOOST_HAS_TRIVIAL_COPY(T) (__is_trivially_copyable(T) && !is_reference<T>::value && !is_volatile<T>::value)
 #   endif
-#   if __has_feature(has_trivial_assign)
-#     define BOOST_HAS_TRIVIAL_ASSIGN(T) (__has_trivial_assign(T) && !is_volatile<T>::value)
+#   if __has_feature(is_trivially_assignable)
+#     define BOOST_HAS_TRIVIAL_ASSIGN(T) (__is_trivially_assignable(T, T) && !is_volatile<T>::value)
 #   endif
-#   if __has_feature(has_trivial_destructor)
-#     define BOOST_HAS_TRIVIAL_DESTRUCTOR(T) __has_trivial_destructor(T)
+#   if __has_feature(is_trivially_destructible)
+#     define BOOST_HAS_TRIVIAL_DESTRUCTOR(T) __is_trivially_destructible(T)
 #   endif
-#   if __has_feature(has_nothrow_constructor)
-#     define BOOST_HAS_NOTHROW_CONSTRUCTOR(T) __has_nothrow_constructor(T)
+#   if __has_feature(is_nothrow_constructible)
+#     define BOOST_HAS_NOTHROW_CONSTRUCTOR(T) __is_nothrow_constructible(T)
 #   endif
 #   if __has_feature(has_nothrow_copy)
-#     define BOOST_HAS_NOTHROW_COPY(T) (__has_nothrow_copy(T) && !is_volatile<T>::value && !is_reference<T>::value)
+#     define BOOST_HAS_NOTHROW_COPY(T) (__is_nothrow_constructible(T) && !is_volatile<T>::value && !is_reference<T>::value)
 #   endif
-#   if __has_feature(has_nothrow_assign)
-#     define BOOST_HAS_NOTHROW_ASSIGN(T) (__has_nothrow_assign(T) && !is_volatile<T>::value)
+#   if __has_feature(is_nothrow_assignable)
+#     define BOOST_HAS_NOTHROW_ASSIGN(T) (__is_nothrow_assignable(T) && !is_volatile<T>::value)
 #   endif
-#   if __has_feature(has_virtual_destructor)
-#     define BOOST_HAS_VIRTUAL_DESTRUCTOR(T) __has_virtual_destructor(T)
+#   if __has_feature(is_trivially_destructible)
+#     define BOOST_HAS_VIRTUAL_DESTRUCTOR(T) __is_trivially_destructible(T)
 #   endif
 #   if __has_feature(is_abstract)
 #     define BOOST_IS_ABSTRACT(T) __is_abstract(T)

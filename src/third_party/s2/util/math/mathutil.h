@@ -101,6 +101,9 @@ template<typename T> struct MathLimits {
   static bool IsPosInf(const Type x);
   static bool IsNegInf(const Type x);
 };
+
+template <> const double MathLimits<double>::kNaN;
+
 // END HACK ALERT
 #endif  //UTIL_MATH_MATHLIMITS_H
 // ========================================================================= //

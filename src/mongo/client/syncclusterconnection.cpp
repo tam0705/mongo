@@ -197,7 +197,7 @@ void SyncClusterConnection::_connect(const std::string& hostStr) {
         c = new DBClientConnection(
             true,  // auto reconnect
             0,     // socket timeout
-            [this, host](const executor::RemoteCommandResponse& isMasterReply) {
+            [host](const executor::RemoteCommandResponse& isMasterReply) {
                 return connectionHook(host, isMasterReply);
             });
     } else {
