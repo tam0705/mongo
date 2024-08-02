@@ -274,13 +274,13 @@ MONGO_INITIALIZER(ExtractSOMap)(InitializerContext*) {
 
 #if defined(__linux__)
 
-#include <elf.h>
+#include <./elf.h>
 #include <link.h>
 
 #ifdef _ELF_H
-std::cout << "elf.h exists? maybe?" << std::endl;
+printf("elf.h exists? maybe?\n");
 #else
-std::cout << "elf.h doesn't exist? maybe?" << std::endl;
+printf("elf.h doesn't exist? maybe?\n");
 #endif
 
 namespace mongo {
