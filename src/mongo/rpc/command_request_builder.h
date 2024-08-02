@@ -43,7 +43,7 @@ namespace rpc {
 /**
  * Constructs an OP_COMMAND message.
  */
-class CommandRequestBuilder : public RequestBuilderInterface {
+class CommandRequestBuilder final : public RequestBuilderInterface {
 public:
     /**
      * Constructs an OP_COMMAND in a new buffer.
